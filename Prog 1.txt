@@ -1,0 +1,35 @@
+Prog 1
+ git --version 
+ gh --version
+
+
+git config --global user.name "hanna"
+git config --global user.email "hanna@gmail.com"
+git config --global --list
+
+mkdir devlab1
+cd devlab1
+
+git config --global --list
+git init
+
+cat > a.py
+# Type: print("Heloo World!") and press Ctrl+Z then Enter (Windows)
+
+git add a.py
+git commit -m "printing hello world"
+
+git branch new_branch
+git checkout new_branch
+
+git add a.py
+git commit -m "added to new branch"
+
+git status
+git merge new_branch
+git log --oneline
+
+git remote add <url>
+git branch -M main
+
+git push origin main

@@ -1,0 +1,22 @@
+install  JDK 21 0R 17
+
+Download Jenkins
+
+install it on selecting JDK 21
+
+Start service --> Entire Feature is unavailable
+
+Services --> Jenkins -> start
+
+http://localhost:8080
+
+- install plugin
+
+-create user
+
+
++ Create a new item
+
++ Build steps > Ecective Windows Batch
+
+echo "project is created %date%"

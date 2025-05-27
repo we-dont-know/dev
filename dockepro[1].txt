@@ -1,0 +1,84 @@
+
+DOWNLOAD DOcker
+
+
+--> wsl --install
+
+
+-->git clone https://github.com/docker/welcome-to-docker.git
+
+-->cd welcome-to-docker
+
+-->docker build -t welcome-to-docker .
+
+-->docker run -p 5000:5000 welcome-to-docker
+
+----------------------------------------------------------------------
+
+
+mkdir dir_name
+
+cd dir_name
+
+
+notepad app.py
+
+
+app.py>>>>
+
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hello_docker():
+    return "Hello Docker!"
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=5000)
+
+
+
+
+notepad requirements.txt
+
+
+Flask==2.0.1
+Werkzeug==2.0.1
+
+
+Create Dockerfile
+
+# Use the official Python image
+FROM python:3.9-slim
+
+# Set the working directory
+WORKDIR /app
+
+# Copy requirements and install
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the application code
+COPY . .
+
+# Expose port 5000
+EXPOSE 5000
+
+# Run the app
+CMD ["python", "app.py"]
+
+
+#### Rename-Item Dockerfile.txt Dockerfile
+
+
+---> docker build -t doc-proj .
+
+
+--> docker run -p 5000:5000 doc-proj
+
+
+
+
+check on : http://localhost:5000
+
+
