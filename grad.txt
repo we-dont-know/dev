@@ -1,0 +1,21 @@
+package gradefrog;
+
+import java.awt.Desktop;
+import java.net.URI;
+
+public class App {
+    public static void main(String[] args) {
+        try {
+            String url = "https://www.google.com";
+            if (Desktop.isDesktopSupported()) {
+                Desktop desktop = Desktop.getDesktop();
+                desktop.browse(new URI(url));
+                System.out.println("Browser opened successfully.");
+            } else {
+                System.out.println("Desktop is not supported on this system.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
